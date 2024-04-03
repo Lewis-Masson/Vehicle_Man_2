@@ -1,6 +1,9 @@
 package ClassDesign;
 
-public abstract class Vehicle {
+import java.io.Serializable;
+import java.util.Objects;
+
+public abstract class Vehicle implements Serializable {
     protected String make;
     protected String model;
     protected int year;
@@ -65,6 +68,17 @@ public abstract class Vehicle {
                 + "VIN: " + vin + "\n";
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 31 * hash + Objects.hashCode(this.make);
+        hash = 31 * hash + Objects.hashCode(this.model);
+        hash = 31 * hash + this.year;
+        hash = 31 * hash + Objects.hashCode(this.gearbox);
+        hash = 31 * hash + Objects.hashCode(this.colour);
+        hash = 31 * hash + this.mileage;
+        hash = 31 * hash + Objects.hashCode(this.vin);
+        hash = 31 * hash + Objects.hashCode(this.bodyType);
+        return hash;
+    }
 }
-
-

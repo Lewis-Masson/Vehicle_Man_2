@@ -1,22 +1,13 @@
 package ClassDesign;
 
-public class VehicleClassDesign {
+public class ClassDesign {
 
     public static void main(String[] args) {
 
     }
-
 }
 
 enum GearboxType {
     MANUAL, AUTOMATIC
+
 }
-
-
-
-
-
-
-
-
-
