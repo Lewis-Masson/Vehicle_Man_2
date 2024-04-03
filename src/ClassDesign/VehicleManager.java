@@ -12,10 +12,9 @@ import java.util.List;
 public class VehicleManager {
 
     @Data
-    public static List<Vehicle> vehicles = new ArrayList<>();  // Make it public
-
+    public static List<Vehicle> vehicles = new ArrayList<>();  
     @Data
-    public static Sequence seq = new Sequence(1, 100_000_000); // Make it public
+    public static Sequence seq = new Sequence(1, 100_000_000); 
 
     public static void main(String[] args) {
         Application.start(VehicleManager.class);
@@ -36,7 +35,7 @@ public class VehicleManager {
         Vehicle newVehicle = createCar();
         vehicles.add(newVehicle);
         System.out.println("Vehicle added successfully.");
-        dataManager.saveVehicles(vehicles); // Save vehicles
+        dataManager.saveVehicles(vehicles); 
     }
 
     @Menu(id = 1, command = "1", description = "Add Car")
@@ -44,27 +43,27 @@ public class VehicleManager {
         Vehicle newVehicle = createCar();
         vehicles.add(newVehicle);
         System.out.println("Car added successfully.");
-        dataManager.saveVehicles(vehicles); // Save vehicles
+        dataManager.saveVehicles(vehicles); 
     }
 
     @Menu(id = 2, command = "2", description = "Add Options to a Vehicle")
     public static void addOptionsToVehicle() {
-        // Add options to vehicle logic here
+    
     }
 
     @Menu(id = 3, command = "3", description = "Remove Vehicle")
     public static void removeVehicle() {
-        // Remove vehicle logic here
+        
     }
 
     @Menu(id = 4, command = "4", description = "Search Vehicle by VIN")
     public static void searchVehicle() {
-        // Search vehicle by VIN logic here
+        
     }
 
     @Menu(id = 5, command = "5", description = "Display All Vehicles")
     public static void displayAllVehicles() {
-        List<Vehicle> loadedVehicles = dataManager.loadVehicles(); // Load vehicles
+        List<Vehicle> loadedVehicles = dataManager.loadVehicles(); 
         if (!loadedVehicles.isEmpty()) {
             for (Vehicle vehicle : loadedVehicles) {
                 System.out.println(vehicle);
