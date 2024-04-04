@@ -1,6 +1,6 @@
 package ClassDesign;
 
-public class ClassDesign {
+public class DataStructure {
 
     public static void main(String[] args) {
 

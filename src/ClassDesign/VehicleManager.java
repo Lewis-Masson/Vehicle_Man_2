@@ -5,8 +5,8 @@ import devtools.ui.Application;
 import devtools.ui.Menu;
 import devtools.util.Reader;
 import devtools.util.Sequence;
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class VehicleManager {
@@ -58,7 +58,7 @@ public class VehicleManager {
                 iterator.remove(); // Remove the vehicle from the list - this needs to be updated so you can see which vehicle is removed
                 removed = true;
                 System.out.println("Vehicle with VIN " + vinToRemove + " removed successfully.");
-                break; // Exit the loop after removing the vehicle
+                break; // Exit the loop after removing the vehicle  
             }
         }
         if (!removed) {
