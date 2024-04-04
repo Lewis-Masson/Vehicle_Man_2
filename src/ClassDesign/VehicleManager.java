@@ -5,7 +5,7 @@ import devtools.ui.Application;
 import devtools.ui.Menu;
 import devtools.util.Reader;
 import devtools.util.Sequence;
-
+import java.util.Iterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +49,23 @@ public class VehicleManager {
 
     @Menu(id = 3, command = "3", description = "Remove Vehicle")
     public static void removeVehicle() {
-        // Remove vehicle logic here
+        String vinToRemove = Reader.readLine("Enter VIN of the vehicle to remove: ");
+        boolean removed = false;
+        Iterator<Vehicle> iterator = vehicles.iterator();
+        while (iterator.hasNext()) {
+            Vehicle vehicle = iterator.next();
+            if (vehicle.getVin().equals(vinToRemove)) {
+                iterator.remove(); // Remove the vehicle from the list - this needs to be updated so you can see which vehicle is removed
+                removed = true;
+                System.out.println("Vehicle with VIN " + vinToRemove + " removed successfully.");
+                break; // Exit the loop after removing the vehicle
+            }
+        }
+        if (!removed) {
+            System.out.println("Vehicle with VIN " + vinToRemove + " not found.");
+        } else {
+            dataManager.saveVehicles(vehicles); // Save vehicles after removal
+        }
     }
 
     @Menu(id = 4, command = "4", description = "Search Vehicle by VIN")
@@ -90,7 +106,7 @@ public class VehicleManager {
         String bodyType = Reader.readLine("Enter Body Type: ");
         return new Car(make, model, year, "Manual", "Black", 0, vin, bodyType);
     }
-    
+
     private static void displayVehicleDetails(Vehicle vehicle) {
         System.out.println("Vehicle Details:");
         System.out.println("Make: " + vehicle.getMake());
