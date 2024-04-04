@@ -14,6 +14,8 @@ public abstract class Motorbike extends Vehicle implements Serializable, Compara
         this.luggageBox = luggageBox;
     }
 
+    
+    
     public String getId() {
         return id;
     }
@@ -37,7 +39,7 @@ public abstract class Motorbike extends Vehicle implements Serializable, Compara
 
     @Override
     public int compareTo(Motorbike other) {
-        
+        // Implement comparison logic if necessary
         return 0; 
     }
 
@@ -45,7 +47,6 @@ public abstract class Motorbike extends Vehicle implements Serializable, Compara
     public int hashCode() {
         int hash = 7;
         hash = 23 * hash + Objects.hashCode(this.id);
-        
         return hash;
     }
 
@@ -60,5 +61,4 @@ public abstract class Motorbike extends Vehicle implements Serializable, Compara
         final Motorbike other = (Motorbike) obj;
         return Objects.equals(this.id, other.id);
     }
-
 }

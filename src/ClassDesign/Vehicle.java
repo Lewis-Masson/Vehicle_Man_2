@@ -57,6 +57,10 @@ public abstract class Vehicle implements Serializable {
         return vin;
     }
 
+    public String getBodyType() {
+        return bodyType;
+    }
+
     @Override
     public String toString() {
         return "Make: " + make + "\n"
