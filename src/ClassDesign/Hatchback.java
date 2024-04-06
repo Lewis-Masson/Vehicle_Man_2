@@ -3,7 +3,7 @@ package ClassDesign;
 import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Hatchback extends Vehicle implements Serializable, Comparable<Hatchback> {
+public abstract class Hatchback extends Car implements Serializable, Comparable<Hatchback> {
 
     private final String id; 
 

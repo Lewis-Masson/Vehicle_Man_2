@@ -1,50 +1,34 @@
 package ClassDesign;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public abstract class Estate extends Car implements Serializable, Comparable<Estate> {
+    private final String id;
+    protected boolean hasRoofRack;
+    protected boolean hasThirdRowSeat;
 
-    private final String id; 
-
-    private boolean thirdRowSeat;
-
-    public Estate(String make, String model, int year, String gearbox, String colour, int mileage, String vin, boolean thirdRowSeat) {
+    public Estate(String make, String model, int year, String gearbox, String colour, int mileage, String vin,
+            boolean hasRoofRack, boolean hasThirdRowSeat) {
         super(make, model, year, gearbox, colour, mileage, vin, "Estate");
-        this.id = vin; 
-        this.thirdRowSeat = thirdRowSeat;
+        this.id = vin;
+        this.hasRoofRack = hasRoofRack;
+        this.hasThirdRowSeat = hasThirdRowSeat;
     }
 
     public String getId() {
         return id;
     }
 
-    public boolean hasThirdRowSeat() {
-        return thirdRowSeat;
-    }
-
-    public void setThirdRowSeat(boolean thirdRowSeat) {
-        this.thirdRowSeat = thirdRowSeat;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString()
-                + "Third Row Seat: " + thirdRowSeat;
-
-    }
-
     @Override
     public int compareTo(Estate other) {
-       
-        return 0; 
+        return 0; // Implement comparison logic if needed
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.id);
-       
+        int hash = super.hashCode();
+        hash = 31 * hash + (hasRoofRack ? 1 : 0);
+        hash = 31 * hash + (hasThirdRowSeat ? 1 : 0);
         return hash;
     }
 
@@ -56,8 +40,10 @@ public abstract class Estate extends Car implements Serializable, Comparable<Est
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        final Estate other = (Estate) obj;
-        return Objects.equals(this.id, other.id);
+        if (!super.equals(obj)) {
+            return false;
+        }
+        Estate other = (Estate) obj;
+        return hasRoofRack == other.hasRoofRack && hasThirdRowSeat == other.hasThirdRowSeat;
     }
-
 }
