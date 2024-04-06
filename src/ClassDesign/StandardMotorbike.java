@@ -10,8 +10,7 @@ public class StandardMotorbike extends Motorbike {
 
     @Override
     public void displayDetails() {
-        // Implement the displayDetails method specific to StandardMotorbike
-        // This method should display the details of the StandardMotorbike
+        
         System.out.println("StandardMotorbike details:");
         System.out.println("Make: " + getMake());
         System.out.println("Model: " + getModel());
@@ -22,8 +21,7 @@ public class StandardMotorbike extends Motorbike {
 
     @Override
     public void addLuggageBox() {
-        // Implement the logic to add a luggage box to a standard motorbike
-        // For example:
+        
         if (!hasLuggageBox()) {
             System.out.println("Luggage box added to standard motorbike.");
             super.addLuggageBox();
@@ -34,8 +32,7 @@ public class StandardMotorbike extends Motorbike {
 
     @Override
     public void removeLuggageBox() {
-        // Implement the logic to remove a luggage box from a standard motorbike
-        // For example:
+        
         if (hasLuggageBox()) {
             System.out.println("Luggage box removed from standard motorbike.");
             super.removeLuggageBox();
@@ -47,7 +44,7 @@ public class StandardMotorbike extends Motorbike {
     public void manageLuggage() {
         boolean hasLuggage = hasLuggageBox();
         if (hasLuggage) {
-            // Motorbike has luggage, so give the option to remove it
+            
             String choice = Reader.readLine("Motorbike currently has luggage. Do you want to remove it? (yes/no): ");
             if (choice.equalsIgnoreCase("yes")) {
                 removeLuggageBox();
@@ -55,7 +52,7 @@ public class StandardMotorbike extends Motorbike {
                 System.out.println("No changes made to luggage.");
             }
         } else {
-            // Motorbike doesn't have luggage, so give the option to add it
+            
             String choice = Reader.readLine("Motorbike currently does not have luggage. Do you want to add it? (yes/no): ");
             if (choice.equalsIgnoreCase("yes")) {
                 addLuggageBox();

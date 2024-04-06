@@ -35,3 +35,63 @@ java.lang.IllegalArgumentException: Invalid gearbox type: masd
 
 **********************
 
+Sat, April 6, 2024. 11:54:26
+java.lang.IllegalArgumentException: Invalid gearbox type: qwe312
+	at ClassDesign.Vehicle.parseGearbox(Vehicle.java:38)
+	at ClassDesign.Vehicle.<init>(Vehicle.java:20)
+	at ClassDesign.Car.<init>(Car.java:38)
+	at ClassDesign.SUV.<init>(SUV.java:12)
+	at ClassDesign.StandardSUV.<init>(StandardSUV.java:7)
+	at ClassDesign.VehicleManager.createCar(VehicleManager.java:135)
+	at ClassDesign.VehicleManager.addCar(VehicleManager.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at devtools.ui.Application.runMenu(Application.java:291)
+	at devtools.ui.Application.loadMenu(Application.java:251)
+	at devtools.ui.Application.start(Application.java:185)
+	at devtools.ui.Application.start(Application.java:72)
+	at ClassDesign.VehicleManager.main(VehicleManager.java:211)
+
+**********************
+
+Sat, April 6, 2024. 12:00:33
+java.lang.IllegalArgumentException: Invalid gearbox type: green
+	at ClassDesign.Vehicle.parseGearbox(Vehicle.java:38)
+	at ClassDesign.Vehicle.<init>(Vehicle.java:20)
+	at ClassDesign.Car.<init>(Car.java:38)
+	at ClassDesign.VehicleManager.createCar(VehicleManager.java:137)
+	at ClassDesign.VehicleManager.addCar(VehicleManager.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at devtools.ui.Application.runMenu(Application.java:291)
+	at devtools.ui.Application.loadMenu(Application.java:251)
+	at devtools.ui.Application.start(Application.java:185)
+	at devtools.ui.Application.start(Application.java:72)
+	at ClassDesign.VehicleManager.main(VehicleManager.java:211)
+
+**********************
+
+Sat, April 6, 2024. 12:22:03
+java.lang.IllegalArgumentException: Invalid gearbox type: AUTO
+	at ClassDesign.Vehicle.parseGearbox(Vehicle.java:38)
+	at ClassDesign.Vehicle.<init>(Vehicle.java:20)
+	at ClassDesign.Saloon.<init>(Saloon.java:11)
+	at ClassDesign.StandardSaloon.<init>(StandardSaloon.java:7)
+	at ClassDesign.VehicleManager.createSaloon(VehicleManager.java:193)
+	at ClassDesign.VehicleManager.addSaloon(VehicleManager.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at devtools.ui.Application.runMenu(Application.java:291)
+	at devtools.ui.Application.loadMenu(Application.java:251)
+	at devtools.ui.Application.start(Application.java:185)
+	at devtools.ui.Application.start(Application.java:72)
+	at ClassDesign.VehicleManager.main(VehicleManager.java:260)
+
+**********************
+

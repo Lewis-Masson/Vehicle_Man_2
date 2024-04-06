@@ -5,12 +5,12 @@ import java.util.Objects;
 
 public abstract class SUV extends Car implements Serializable, Comparable<SUV> {
 
-    private final String id; 
+    private final String id;
     private boolean allWheelDrive;
 
     public SUV(String make, String model, int year, String gearbox, String colour, int mileage, String vin, boolean allWheelDrive) {
         super(make, model, year, gearbox, colour, mileage, vin, "SUV");
-        this.id = vin; 
+        this.id = vin;
         this.allWheelDrive = allWheelDrive;
     }
 
@@ -33,15 +33,13 @@ public abstract class SUV extends Car implements Serializable, Comparable<SUV> {
 
     @Override
     public int compareTo(SUV other) {
-        
-        return 0; 
+        return 0;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.id);
-       
+        int hash = super.hashCode();
+        hash = 31 * hash + Objects.hashCode(this.id);
         return hash;
     }
 
@@ -53,8 +51,20 @@ public abstract class SUV extends Car implements Serializable, Comparable<SUV> {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
+        if (!super.equals(obj)) {
+            return false;
+        }
         final SUV other = (SUV) obj;
         return Objects.equals(this.id, other.id);
     }
 
+    
+    public void addAllWheelDrive() {
+        if (!hasAllWheelDrive()) {
+            setAllWheelDrive(true);
+            System.out.println("All-wheel drive added successfully.");
+        } else {
+            System.out.println("The SUV already has all-wheel drive.");
+        }
+    }
 }

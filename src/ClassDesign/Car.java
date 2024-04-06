@@ -1,6 +1,7 @@
 package ClassDesign;
 
 public class Car extends Vehicle {
+
     boolean satNav;
     boolean parkingSensors;
     boolean towBar;
@@ -88,5 +89,13 @@ public class Car extends Vehicle {
     @Override
     public String getBodyType() {
         return bodyType;
+    }
+
+    public void addAllWheelDrive(boolean allWheelDrive) {
+        if ("SUV".equalsIgnoreCase(bodyType)) {
+
+        } else {
+            System.out.println("All-wheel drive option is not available for this type of car.");
+        }
     }
 }
