@@ -25,7 +25,7 @@ public class VehicleManager {
 
     static {
         dataManager = new DataManager();
-        //  initializeVehicles();
+       initializeVehicles();
     }
 
     private static void initializeVehicles() {
