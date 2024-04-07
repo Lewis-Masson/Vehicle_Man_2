@@ -11,21 +11,12 @@ import java.util.List;
 
 public class VehicleManager {
 
-    @Data
     public static List<Vehicle> vehicles = new ArrayList<>();
-
-    @Data
     public static Sequence seq = new Sequence(1, 100_000_000);
-
-    private static DataManager dataManager;
-
-    static {
-        dataManager = new DataManager();
-    }
+    private static DataManager dataManager = new DataManager();
 
     static {
-        dataManager = new DataManager();
-       initializeVehicles();
+        initializeVehicles();
     }
 
     private static void initializeVehicles() {
