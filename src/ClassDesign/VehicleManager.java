@@ -25,7 +25,7 @@ public class VehicleManager {
 
     static {
         dataManager = new DataManager();
-        initializeVehicles();
+        //  initializeVehicles();
     }
 
     private static void initializeVehicles() {
@@ -68,7 +68,6 @@ public class VehicleManager {
         int mileage = Reader.readInt("Enter Mileage: ");
         boolean allWheelDrive = Reader.readBoolean("Does the SUV have all-wheel drive? (true/false): ");
 
-     
         if (!allWheelDrive) {
             String addAllWheelDrive = Reader.readLine("Do you want to add all-wheel drive? (yes/no): ");
             if (addAllWheelDrive.equalsIgnoreCase("yes")) {
@@ -81,7 +80,6 @@ public class VehicleManager {
         boolean hasParkingSensors = Reader.readBoolean("Does the SUV have parking sensors? (true/false): ");
         boolean hasTowBar = Reader.readBoolean("Does the SUV have a tow bar? (true/false): ");
 
-      
         if (!hasRoofRack) {
             String addRoofRack = Reader.readLine("Do you want to add a roof rack? (yes/no): ");
             if (addRoofRack.equalsIgnoreCase("yes")) {
@@ -131,13 +129,11 @@ public class VehicleManager {
         String colour = Reader.readLine("Enter Colour: ");
         int mileage = Reader.readInt("Enter Mileage: ");
 
-       
         boolean hasRoofRack = Reader.readBoolean("Does the Saloon have a roof rack? (true/false): ");
         boolean hasSatNav = Reader.readBoolean("Does the Saloon have sat nav? (true/false): ");
         boolean hasParkingSensors = Reader.readBoolean("Does the Saloon have parking sensors? (true/false): ");
         boolean hasTowBar = Reader.readBoolean("Does the Saloon have a tow bar? (true/false): ");
 
-      
         if (!hasRoofRack) {
             String addRoofRack = Reader.readLine("Do you want to add a roof rack? (yes/no): ");
             if (addRoofRack.equalsIgnoreCase("yes")) {
@@ -166,7 +162,6 @@ public class VehicleManager {
             }
         }
 
-       
         return new StandardSaloon(make, model, year, gearbox, colour, mileage, vin, hasRoofRack, hasSatNav, hasParkingSensors, hasTowBar);
     }
 
@@ -192,7 +187,6 @@ public class VehicleManager {
         boolean hasParkingSensors = Reader.readBoolean("Does the Hatchback have parking sensors? (true/false): ");
         boolean hasTowBar = Reader.readBoolean("Does the Hatchback have a tow bar? (true/false): ");
 
-       
         if (!hasRoofRack) {
             String addRoofRack = Reader.readLine("Do you want to add a roof rack? (yes/no): ");
             if (addRoofRack.equalsIgnoreCase("yes")) {
@@ -303,17 +297,17 @@ public class VehicleManager {
     }
 
     @Menu(id = 1, command = "1", description = "Display All Vehicles")
-public static void displayAllVehicles() {
-    if (!vehicles.isEmpty()) {
-        System.out.println("List of Vehicles:");
-        for (Vehicle vehicle : vehicles) {
-            displayVehicleDetails(vehicle);
-            System.out.println();
+    public static void displayAllVehicles() {
+        if (!vehicles.isEmpty()) {
+            System.out.println("List of Vehicles:");
+            for (Vehicle vehicle : vehicles) {
+                displayVehicleDetails(vehicle);
+                System.out.println();
+            }
+        } else {
+            System.out.println("There are currently no vehicles.");
         }
-    } else {
-        System.out.println("There are currently no vehicles.");
     }
-}
 
     private static Motorbike createMotorbike() {
         System.out.println("Enter motorbike details:");
@@ -407,6 +401,11 @@ public static void displayAllVehicles() {
 
     @Menu(id = 9, command = "9", description = "Remove Vehicle")
     public static void removeVehicle() {
+        if (vehicles.isEmpty()) {
+            System.out.println("There are no vehicles to remove.");
+            return;
+        }
+
         String vinToRemove = Reader.readLine("Enter VIN of the vehicle to remove: ");
         boolean removed = false;
         Iterator<Vehicle> iterator = vehicles.iterator();
