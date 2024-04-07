@@ -41,7 +41,7 @@ public class VehicleManager {
         vehicles.add(new StandardSaloon("BMW", "3 Series", 2020, "Automatic", "Black", 20000, "VIN10", true, false, true, true));
     }
 
-    @Menu(id = 1, command = "1", description = "Add Motorbike")
+    @Menu(id = 4, command = "4", description = "Add Motorbike")
     public static void addMotorbike() {
         Vehicle newVehicle = createMotorbike();
         vehicles.add(newVehicle);
@@ -49,7 +49,7 @@ public class VehicleManager {
         dataManager.saveVehicles(vehicles);
     }
 
-    @Menu(id = 2, command = "2", description = "Add SUV")
+    @Menu(id = 5, command = "5", description = "Add SUV")
     public static void addSUV() {
         SUV newSUV = createSUV();
         vehicles.add(newSUV);
@@ -63,7 +63,7 @@ public class VehicleManager {
         String model = Reader.readLine("Model: ");
         int year = Reader.readInt("Year: ");
         String vin = Reader.readLine("Enter VIN: ");
-        String gearbox = Reader.readLine("Enter Gearbox: ");
+        String gearbox = Reader.readLine("Enter Gearbox (Manual or Automatic): ");
         String colour = Reader.readLine("Enter Colour: ");
         int mileage = Reader.readInt("Enter Mileage: ");
         boolean allWheelDrive = Reader.readBoolean("Does the SUV have all-wheel drive? (true/false): ");
@@ -113,7 +113,7 @@ public class VehicleManager {
         return new StandardSUV(make, model, year, gearbox, colour, mileage, vin, allWheelDrive, hasRoofRack, hasSatNav, hasParkingSensors, hasTowBar);
     }
 
-    @Menu(id = 3, command = "3", description = "Add Saloon")
+    @Menu(id = 6, command = "6", description = "Add Saloon")
     public static void addSaloon() {
         Saloon newSaloon = createSaloon();
         vehicles.add(newSaloon);
@@ -127,7 +127,7 @@ public class VehicleManager {
         String model = Reader.readLine("Model: ");
         int year = Reader.readInt("Year: ");
         String vin = Reader.readLine("Enter VIN: ");
-        String gearbox = Reader.readLine("Enter Gearbox: ");
+        String gearbox = Reader.readLine("Enter Gearbox (Manual or Automatic): ");
         String colour = Reader.readLine("Enter Colour: ");
         int mileage = Reader.readInt("Enter Mileage: ");
 
@@ -170,7 +170,7 @@ public class VehicleManager {
         return new StandardSaloon(make, model, year, gearbox, colour, mileage, vin, hasRoofRack, hasSatNav, hasParkingSensors, hasTowBar);
     }
 
-    @Menu(id = 4, command = "4", description = "Add Hatchback")
+    @Menu(id = 7, command = "7", description = "Add Hatchback")
     public static void addHatchback() {
         Hatchback newHatchback = createHatchback();
         vehicles.add(newHatchback);
@@ -184,7 +184,7 @@ public class VehicleManager {
         String model = Reader.readLine("Model: ");
         int year = Reader.readInt("Year: ");
         String vin = Reader.readLine("Enter VIN: ");
-        String gearbox = Reader.readLine("Enter Gearbox: ");
+        String gearbox = Reader.readLine("Enter Gearbox (Manual or Automatic): ");
         String colour = Reader.readLine("Enter Colour: ");
         int mileage = Reader.readInt("Enter Mileage: ");
         boolean hasRoofRack = Reader.readBoolean("Does the Hatchback have a roof rack? (true/false): ");
@@ -224,7 +224,7 @@ public class VehicleManager {
         return new StandardHatchback(make, model, year, gearbox, colour, mileage, vin, hasRoofRack, hasSatNav, hasParkingSensors, hasTowBar);
     }
 
-    @Menu(id = 5, command = "5", description = "Add Estate")
+    @Menu(id = 8, command = "8", description = "Add Estate")
     public static void addEstate() {
         Estate newEstate = createEstate();
         vehicles.add(newEstate);
@@ -238,7 +238,7 @@ public class VehicleManager {
         String model = Reader.readLine("Model: ");
         int year = Reader.readInt("Year: ");
         String vin = Reader.readLine("Enter VIN: ");
-        String gearbox = Reader.readLine("Enter Gearbox: ");
+        String gearbox = Reader.readLine("Enter Gearbox (Manual or Automatic): ");
         String colour = Reader.readLine("Enter Colour: ");
         int mileage = Reader.readInt("Enter Mileage: ");
         boolean hasRoofRack = Reader.readBoolean("Does the Estate have a roof rack? (true/false): ");
@@ -285,7 +285,7 @@ public class VehicleManager {
         return new StandardEstate(make, model, year, gearbox, colour, mileage, vin, hasRoofRack, hasSatNav, hasParkingSensors, hasTowBar, hasThirdRowSeat);
     }
 
-    @Menu(id = 7, command = "7", description = "Search Vehicle by VIN")
+    @Menu(id = 3, command = "3", description = "Search Vehicle by VIN")
     public static void searchVehicle() {
         String vinToSearch = Reader.readLine("Enter VIN to search for: ");
         boolean found = false;
@@ -302,7 +302,7 @@ public class VehicleManager {
         }
     }
 
-    @Menu(id = 8, command = "8", description = "Display All Vehicles")
+    @Menu(id = 1, command = "1", description = "Display All Vehicles")
 public static void displayAllVehicles() {
     if (!vehicles.isEmpty()) {
         System.out.println("List of Vehicles:");
@@ -334,7 +334,7 @@ public static void displayAllVehicles() {
         }
     }
 
-    @Menu(id = 9, command = "9", description = "List Vehicles by Type")
+    @Menu(id = 2, command = "2", description = "List Vehicles by Type")
     public static void listVehiclesByType() {
         String vehicleType = Reader.readLine("Enter the type of vehicle to list (SUV/Estates/Hatchbacks/Saloons/Motorbikes): ");
 
@@ -405,7 +405,7 @@ public static void displayAllVehicles() {
         }
     }
 
-    @Menu(id = 10, command = "6", description = "Remove Vehicle")
+    @Menu(id = 9, command = "9", description = "Remove Vehicle")
     public static void removeVehicle() {
         String vinToRemove = Reader.readLine("Enter VIN of the vehicle to remove: ");
         boolean removed = false;

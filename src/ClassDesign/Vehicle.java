@@ -1,5 +1,6 @@
 package ClassDesign;
 
+import devtools.util.Reader;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -28,16 +29,20 @@ public abstract class Vehicle implements Serializable {
         this(make, model, year, gearbox, colour, mileage, vin, null);
     }
 
-    private GearboxType parseGearbox(String gearbox) {
+    private static GearboxType parseGearbox(String gearbox) {
+    while (true) {
         switch (gearbox.toUpperCase()) {
             case "MANUAL":
                 return GearboxType.MANUAL;
             case "AUTOMATIC":
                 return GearboxType.AUTOMATIC;
             default:
-                throw new IllegalArgumentException("Invalid gearbox type: " + gearbox);
+                System.out.println("Invalid gearbox type. Please enter 'Manual' or 'Automatic'.");
+                
+                gearbox = Reader.readLine("Enter Gearbox (Manual or Automatic): ");
         }
     }
+}
 
     public abstract void displayDetails();
 
